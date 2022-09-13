@@ -1,0 +1,16 @@
+ALGORITHM insertion
+VAR
+    i, j, card : INTEGER;
+    tab : ARRAY_OF INTEGER[10];
+BEGIN
+    FOR i FROM 1 TO tab.length - 1 STEP 1 DO
+        card := tab[i];
+        j := i - 1;
+        // We move elements from 0 to i-1, greater than our element 'card'
+        WHILE (j >= 0  && tab[j] > card) DO
+            tab[j+1] := tab[j];
+            j := j + 1;
+        END_WHILE
+        tab[j+1] = card;
+    END_FOR
+END
